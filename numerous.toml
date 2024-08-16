@@ -1,0 +1,9 @@
+name = "Template Simulation App"
+description = "This is a template for a simulation app. You can run a simulation in a separate process while following the progress."
+library = "streamlit"
+python = "3.12"
+app_file = "app.py"
+requirements_file = "requirements.txt"
+port = 80
+cover_image = "app_cover.jpg"
+exclude = ["*venv", "venv*", ".git", ".env"]
