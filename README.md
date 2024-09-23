@@ -18,3 +18,13 @@ numerous download -o <your organization> -a <app slug>
 
 Alternatively, you can clone this repository continue working on it, before pushing it to the Numerous Platform.
 
+## Local Development
+
+To run the app locally, you can run the following command:
+
+```bash
+pip install .
+panel serve app.py
+```
+
+
