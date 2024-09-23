@@ -71,3 +71,7 @@ app = pn.template.BootstrapTemplate(
 )
 
 app.servable()
+
+if __name__ == "__main__":
+    # Serve the app on a local Panel server
+    pn.serve(app, port=5006)  # You can specify the port if needed
