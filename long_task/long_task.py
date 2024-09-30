@@ -6,7 +6,7 @@ import traceback
 class Task:
     def __init__(self, stop_message="Process was forcefully terminated."):
         self._process = None
-        self._progress = multiprocessing.Value('d', 0.0)  # Shared progress value
+        self._progress = multiprocessing.Value("d", 0.0)  # Shared progress value
         self._result_queue = multiprocessing.Queue()
         self._exception_queue = multiprocessing.Queue()
         self._return_value = None
@@ -27,12 +27,13 @@ class Task:
         raise NotImplementedError("The run method must be implemented by the subclass.")
 
     def start(self, *args, **kwargs):
-        
         if self._process is None or not self._process.is_alive():
-            self._progress .value = 0.0
+            self._progress.value = 0.0
             self._return_value = None
             self._exception = None
-            self._process = multiprocessing.Process(target=self._run_wrapper, args=args, kwargs=kwargs)
+            self._process = multiprocessing.Process(
+                target=self._run_wrapper, args=args, kwargs=kwargs
+            )
             self._process.start()
 
     def stop(self):
@@ -98,9 +99,9 @@ if __name__ == "__main__":
     sim.start(5)  # Run simulation for 5 seconds
     while sim.alive:
         print(f"Progress: {sim.progress:.2%}")
-        if sim.progress>.5:
+        if sim.progress > 0.5:
             print("Stopping the simulation!")
             sim.stop()
         time.sleep(0.5)
-    
+
     print(f"Result: {sim.result}")
