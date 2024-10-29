@@ -84,13 +84,31 @@ class MySimulation(Task):
     def __init__(self):
         super().__init__(stop_message="Simulation was stopped.")
 
-    def run(self, duration):
+    def run(self, duration, input1:float, input2:float):
+
+        y = input1
+        power = input2
+        result = []
+        t = []
+
         for i in range(int(duration * 10)):
+            # Pseudocode for a simulation
+
+            loss = y * 0.01
+            dy = power/10 - loss
+            
+            y += dy
+
+            result.append(y)
+            t.append(i/10)
+
             if self._progress.value >= 1.0:
                 break
             self._progress.value = i / (duration * 10)
-            time.sleep(0.1)
-        return "Simulation complete!"
+            time.sleep(0.01)
+
+        
+        return "Simulation complete!", t, result
 
 
 # Example usage

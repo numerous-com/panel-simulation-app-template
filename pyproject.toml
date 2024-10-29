@@ -9,7 +9,8 @@ version = "0.1.0"
 classifiers = ["Programming Language :: Python :: 3"]
 dependencies = [
     "panel",
-    "hvplot"
+    "pandas",
+    "plotly"
     ]
 
 [project.optional-dependencies]
