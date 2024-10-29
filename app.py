@@ -1,7 +1,7 @@
 import threading
 import time
 import plotly.graph_objects as go
-
+import panel as pn
 from long_task.long_task import MySimulation
 
 # Ensure Panel extensions are loaded
