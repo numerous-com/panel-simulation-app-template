@@ -5,7 +5,7 @@ import panel as pn
 from long_task.long_task import MySimulation
 
 # Ensure Panel extensions are loaded
-pn.extension()
+pn.extension('plotly')
 
 # Assuming MySimulation class is already defined as shown before
 
@@ -111,7 +111,6 @@ class SimulationApp:
                 showlegend=False,
                 template='plotly_white'
             )
-            print("!")
             
             self.plot_pane.object = fig
             
